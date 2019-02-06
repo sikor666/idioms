@@ -45,14 +45,14 @@ T* mean(T*, T*)
 void f(std::vector<int>& v, int* p, int n)
 {
     auto x = mean(v.begin(), v.end());
-    auto y = mean(p, p + n); // SFINAE
+    auto y = mean(p, p + n);
 }
 
 int main() {
     X x;
     test(x, &X::f);
     test(&x, &X::f);
-    test(42, 1337); // SFINAE
+    test(42, 1337);
 
     std::vector<int> v;
     f(v, v.data(), v.size());
